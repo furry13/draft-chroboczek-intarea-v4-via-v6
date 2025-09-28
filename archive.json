@@ -1,7 +1,7 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-20T00:40:53.594293+00:00",
-  "repo": "wkumari/draft-chroboczek-intarea-v4-via-v6",
+  "timestamp": "2025-09-28T01:21:20.817827+00:00",
+  "repo": "furry13/draft-chroboczek-intarea-v4-via-v6",
   "labels": [
     {
       "name": "bug",
@@ -49,102 +49,6 @@
       "color": "ffffff"
     }
   ],
-  "issues": [
-    {
-      "number": 2,
-      "id": "I_kwDOLHMNHM7BdTbO",
-      "title": "Some Notes about the usage ov v4 via v6",
-      "url": "https://github.com/wkumari/draft-chroboczek-intarea-v4-via-v6/issues/2",
-      "state": "OPEN",
-      "author": "ruben-herold",
-      "authorAssociation": "NONE",
-      "assignees": [],
-      "labels": [],
-      "body": "I found your work in the repository while digging around in Microsoft Windows for IPv4 with IPv6 next hop support and want to share some information with you:\n\n1.  Windows has no support for this, neither static configured nor via windows BGP (I opened tickets and waiting for feedback)\n2. There is a EURO-IX working group working to implement it in IX peering LANs: https://github.com/euro-ix/rfc8950-ixp\n3.  Also, there is a Test AS to test your systems at major IX's: https://measurement.network/services/v4less-as/\n5. frrouting has support for it via bgp, support for adding static routes was merged some days before: https://github.com/FRRouting/frr/pull/18654\n6. bird seems to run fine since bird2\n7. Mac OSX seems also not to have support for IPv4 with IPv6 next hop.\n8. VPP works also since a long time\n\n\nAlso, https://blog.bott.im/bgp-unnumbered-in-2025-same-idea-different-implementations/  could be interested especially https://datatracker.ietf.org/doc/html/draft-white-linklocal-capability-06\n\n\n ",
-      "createdAt": "2025-07-19T21:32:19Z",
-      "updatedAt": "2025-07-19T21:32:19Z",
-      "closedAt": null,
-      "comments": []
-    }
-  ],
-  "pulls": [
-    {
-      "number": 1,
-      "id": "PR_kwDOLHMNHM6bv0rk",
-      "title": "Integrated feedback from IETF122",
-      "url": "https://github.com/wkumari/draft-chroboczek-intarea-v4-via-v6/pull/1",
-      "state": "MERGED",
-      "author": "wkumari",
-      "authorAssociation": "OWNER",
-      "assignees": [],
-      "labels": [],
-      "body": "I addressed comments from IETF122 IntArea meeting -- see: https://mailarchive.ietf.org/arch/msg/int-area/OV3ZNT4aOBt6oDjLtBYo5TMrdYw/ for summary.",
-      "createdAt": "2025-06-23T23:10:26Z",
-      "updatedAt": "2025-07-07T17:35:22Z",
-      "baseRepository": "wkumari/draft-chroboczek-intarea-v4-via-v6",
-      "baseRefName": "main",
-      "baseRefOid": "291e189e1dc0f4e38994abaa3b7c45c950acfb1d",
-      "headRepository": "wkumari/draft-chroboczek-intarea-v4-via-v6",
-      "headRefName": "from_ietf_122",
-      "headRefOid": "3254c4ab2c371917e718fc22a1da4296fff95fc6",
-      "closedAt": "2025-06-24T19:18:42Z",
-      "mergedAt": "2025-06-24T19:18:42Z",
-      "mergedBy": "wkumari",
-      "mergeCommit": {
-        "oid": "164ea6bd4e75d8ca92fcce0645592dc656a31fb8"
-      },
-      "comments": [
-        {
-          "author": "jech",
-          "authorAssociation": "COLLABORATOR",
-          "body": "Thanks, Warren.\r\n\r\nThe bit about recursive changes should go into its own paragraph, since right now the paragraph seems overloaded to me.  Not sure about the bit about the reverse being also possible.\r\n\r\nFeel free to either make the fix yourself, or commit as is and let me do the editorial changes.",
-          "createdAt": "2025-06-24T16:43:06Z",
-          "updatedAt": "2025-06-24T16:43:06Z"
-        },
-        {
-          "author": "wkumari",
-          "authorAssociation": "OWNER",
-          "body": "Thank you. I fully agree that the paragraph is clunky as  currently written, but I couldn't figure out how to cleanly break it out. I started down the lines of \"The above paragraph notes that the mapping is from prefixes to next-hop pairs; sometimes resolving this next-hop pair first requires resolving an intermediate route - this is referred to as recur... \" before deciding that this was clunky...  I'm make the excuse that I'm super-jetlagged at the moment :-) \r\n\r\nI'll commit this. please see if you can massage it into something which flows better. I've requested a slot at the IntArea meeting to hopefully ask for WGLC, and so we should make sure that we post a new version well in advance of the meeting... ",
-          "createdAt": "2025-06-24T19:18:45Z",
-          "updatedAt": "2025-06-24T19:18:45Z"
-        },
-        {
-          "author": "jech",
-          "authorAssociation": "COLLABORATOR",
-          "body": "Sure.  What's the deadline?",
-          "createdAt": "2025-06-25T08:26:27Z",
-          "updatedAt": "2025-06-25T08:26:27Z"
-        },
-        {
-          "author": "wkumari",
-          "authorAssociation": "OWNER",
-          "body": "I *think* that it is 7/7, but hopefully we can get it in before that...\n",
-          "createdAt": "2025-06-25T16:19:30Z",
-          "updatedAt": "2025-06-25T16:19:30Z"
-        },
-        {
-          "author": "jech",
-          "authorAssociation": "COLLABORATOR",
-          "body": "Ok, I've done some wordsmithing and restructuring.  Mostly editorial.\r\n\r\nThe one place where I've changed the meaning is that I removed your claim that it's mostly a UI change.  I don't entirely agree, so rather than having an extended discussion on the subject, I suggest we simply drop the claim.",
-          "createdAt": "2025-07-07T16:50:25Z",
-          "updatedAt": "2025-07-07T16:50:25Z"
-        },
-        {
-          "author": "wkumari",
-          "authorAssociation": "OWNER",
-          "body": "Okey dokey, should I post a new version to Datatracker?\r\nW\r\n\r\n\r\nOn Mon, Jul 07, 2025 at 12:50 PM, Juliusz Chroboczek <\r\n***@***.***> wrote:\r\n\r\n> *jech* left a comment (wkumari/draft-chroboczek-intarea-v4-via-v6#1)\r\n> <https://github.com/wkumari/draft-chroboczek-intarea-v4-via-v6/pull/1#issuecomment-3045910588>\r\n>\r\n> Ok, I've done some wordsmithing and restructuring. Mostly editorial.\r\n>\r\n> The one place where I've changed the meaning is that I removed your claim\r\n> that it's mostly a UI change. I don't entirely agree, so rather than having\r\n> an extended discussion on the subject, I suggest we simply drop the claim.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/wkumari/draft-chroboczek-intarea-v4-via-v6/pull/1#issuecomment-3045910588>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/ABDG3XELMM2ICXP2KX3S3AD3HKQONAVCNFSM6AAAAAB76VH3N2VHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHMZTANBVHEYTANJYHA>\r\n> .\r\n> You are receiving this because you modified the open/close state.Message\r\n> ID: ***@***.***\r\n> com>\r\n>\r\n",
-          "createdAt": "2025-07-07T16:56:58Z",
-          "updatedAt": "2025-07-07T16:56:58Z"
-        },
-        {
-          "author": "jech",
-          "authorAssociation": "COLLABORATOR",
-          "body": "> Okey dokey, should I post a new version to Datatracker? \n\nPlease do.\n",
-          "createdAt": "2025-07-07T17:35:22Z",
-          "updatedAt": "2025-07-07T17:35:22Z"
-        }
-      ],
-      "reviews": []
-    }
-  ]
+  "issues": [],
+  "pulls": []
 }
